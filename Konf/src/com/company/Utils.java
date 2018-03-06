@@ -7,10 +7,10 @@ public class Utils {
 
     public static void doSmth ( ) {
 
-        List <Sweets> podarok; //ссылочная переменная
+        List <Sweets> podarok= new ArrayList <> (); //ссылочная переменная
 
 
-        podarok = new ArrayList <> ();
+        //podarok = new ArrayList <> ();
 
 //VERSIONS DUO 3.0
 
@@ -163,9 +163,10 @@ public class Utils {
 
 
                         for (Sweets sweet: podarok) ;
+                        System.out.println (podarok);
 
-String searchString = "red";
-                            if (podarok.contains ( searchString )) {
+//String searchString = "red";
+                            if (podarok.contains ( lollipop)) {
 
                                 System.out.println ( "\nPodarok содержит red" );
                             }
