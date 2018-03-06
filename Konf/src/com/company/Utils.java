@@ -11,7 +11,7 @@ public class Utils {
         List <Sweets> podarok = new ArrayList <> (); //ссылочная переменная
 
 
-//VERSIONS QUATRO   4.0.1
+//VERSIONS QUATRO   4.0.2
 
 
 //-------Выбрать действие с конфетами------------
@@ -229,34 +229,28 @@ public class Utils {
 
                     System.out.println ( "How much konfetok to weight? " );
                     int konfetokNum = scan.nextInt ();
-                    int arr []= new int [konfetokNum];
+                    int arr[]       = new int[konfetokNum];
                     System.out.println ( "Input konfetka's weight: " );
 
                     for (int konfetQuantity = 0; konfetQuantity < konfetokNum; konfetQuantity++) {
 
 
-
-                        arr [konfetQuantity] =  scan.nextInt ();
+                        arr[konfetQuantity] = scan.nextInt ();
                     }
-                    System.out.println ( "Sweets have following weight: " );
+                    System.out.println ( "Sweets of podarok have following weights: " );
                     for (int konfetQuantity = 0; konfetQuantity < konfetokNum; konfetQuantity++) {
-                        System.out.print ( " v podarke est: " );
-                        System.out.println ( " " + arr[konfetQuantity] );
+                        System.out.println ( "v podarke est: " + arr[konfetQuantity] + "gr" );
 
 
                     }
-
-                    /*int sumVes = 0;
-                    sumVes += arr[];
-                    for (int konfetQuantity = 0; konfetQuantity < konfetokNum; konfetQuantity++) {
-
-                        System.out.println ( "VES podarka is: " );
-                    }*/
-                    //System.out.println();
+                    int sumVes = 0;
+                    for (int ves : arr) {
+                        sumVes = sumVes + ves;
+                    }
+                    System.out.println ( "Podarok has following weight: " + sumVes );
 
 
-
-                  break;
+                    break;
 
                 }
 
