@@ -12,7 +12,7 @@ public class Utils {
 
         //podarok = new ArrayList <> ();
 
-//VERSIONS DUO 3.0
+//VERSIONS QUATRO   4.0
 
 
 //-------Выбрать действие с конфетами------------
