@@ -1,18 +1,19 @@
 package com.company;
 
 import java.util.*;
+import java.lang.String;
 
 
 public class Utils {
 
     public static void doSmth ( ) {
 
-        List <Sweets> podarok= new ArrayList <> (); //ссылочная переменная
+        List <Sweets> podarok = new ArrayList <> (); //ссылочная переменная
 
 
-        //podarok = new ArrayList <> ();
 
-//VERSIONS QUATRO   4.0
+
+//VERSIONS QUATRO   4.0.1
 
 
 //-------Выбрать действие с конфетами------------
@@ -65,10 +66,10 @@ public class Utils {
 
 
                                     Lollipop lollipop = new Lollipop ();
-                                    System.out.println ( "Enter lollipop name: " );
+                                    System.out.println ( "Enter lollipop's name: " );
                                     String name = scan.next ();
                                     lollipop.setName ( name );
-                                    System.out.println ( "Enter lollipop weight: " );
+                                    System.out.println ( "Enter the weight of lollipop, please: " );
 
                                     int weight = scan.nextInt ();
                                     lollipop.setWeight ( weight );
@@ -76,14 +77,15 @@ public class Utils {
                                     podarok.add ( lollipop );
 
 
-                                    System.out.println ( podarok );
-
                                 }
+                                System.out.println ( "Podarok contains: " + podarok + "\n" );
                                 break;
 
                             }
 
                             case 12: {
+
+                                // дубляж of Case11. useless
                                 int quantity;
                                 System.out.println ( "How much of choco should I add to podarok?" );
                                 quantity = scan.nextInt ();
@@ -91,19 +93,19 @@ public class Utils {
                                 for (int i = 1; i <= quantity; i++) {
 
                                     Choco choco = new Choco ();
-                                    System.out.println ( "Enter choco name: " );
+                                    System.out.println ( "Enter choco's name: " );
                                     String name = scan.next ();
                                     choco.setName ( name );
-                                    System.out.println ( "Enter choco weight: " );
+                                    System.out.println ( "Enter its weight: " );
 
                                     int weight = scan.nextInt ();
                                     choco.setWeight ( weight );
 
                                     podarok.add ( choco );
-                                    System.out.println ( podarok );
+
 
                                 }
-
+                                System.out.println ( "Podarok contains: " + podarok + "\n" );
 
                                 break;
 
@@ -124,18 +126,26 @@ public class Utils {
 
                             }
 
-
+// Задума была, чтобы при выборе этого кейса пользователя выбрасывало в МЕНЮ-1. Пока не понимаю, как это сделать.
                             case 14: {
-                                viborMenu2 = false;
+                                /*//viborMenu2 = false;
+                                choiceMENU1 = false;
                                 System.out.println ( "\nDONE & FINISHED(MENU-2)." );
 
 
+                                break;*/
+
+                                choiceMENU1 = true;
+                                System.out.print ( "\nDONE (MENU-1)" );
                                 break;
+
+
+
                             }
                             default: {
                                 // ERROR IF TYPE A LETTER INSTEAD OF INTEGER!!!!!!!!
 
-                                System.out.println ( "Wrong type (MENU 2). Enter valid one!" );
+                                System.out.println ( "Wrong type (MENU 2). Enter a valid one!" );
                                 break;
                             }
 
@@ -152,7 +162,9 @@ public class Utils {
 
                 case 2: {
 
-                        Lollipop lollipop = new Lollipop ();
+                    // 1st variant не работает (где ошибка?)
+
+              /*          Lollipop lollipop = new Lollipop ();
                         System.out.println ( "Enter konfetka's name: " );
                         String name = scan.next ();
                         lollipop.setName ( name );
@@ -172,17 +184,86 @@ public class Utils {
                             }
                             else {
                                 System.out.println ( "\nPodarok НЕ содержит наименование RED" );
+                            }*/
+
+ // second variant
+                         Lollipop lollipop = new Lollipop ();
+                        System.out.println ( "Enter konfetka's name: " );
+                        String name = scan.next ();
+                        lollipop.setName ( name );
+
+                        podarok.add ( lollipop);
+
+
+
+
+                        for (Sweets sweet: podarok) ;
+
+
+
+                            if (name.equals ("red")) {
+
+                                System.out.println ( "\nPodarok содержит " + name );
+                            }
+                            else {
+                                System.out.println ( "\nPodarok НЕ содержит наименование " + name );
                             }
 
 
 
+
+// 3 variant - не работает (где ошибка?)
+                   /* ArrayList <String> podarok2 = new ArrayList <> ();
+
+
+                    String kon1 = new String ( "Звездочка" );
+                    String kon2 = new String ( "Мишки" );
+                    String kon3 = new String ( "Коммунарка" );
+                    String kon4 = new String ( "Рачки" );
+                    String kon5 = new String ( "Белочка" );
+                    String kon6 = new String ( "Аленка" );
+                    String kon7 = new String ( "Троицкое предместье" );
+                    String kon8 = new String ( "Трюфель" );
+                    String kon9 = new String ( "Белорусская картошка" );
+
+
+                    podarok2.add ( kon1 );
+                    podarok2.add ( kon2 );
+                    podarok2.add ( kon3 );
+                    podarok2.add ( kon4 );
+                    podarok2.add ( kon5 );
+                    podarok2.add ( kon6 );
+                    podarok2.add ( kon7 );
+                    podarok2.add ( kon8 );
+                    podarok2.add ( kon9 );
+
+                    System.out.println ( "Enter konfetka's name: " );
+                    String input = scan.next ();
+
+
+                    Iterator itr = podarok2.iterator ();
+
+                     while (itr.hasNext ()) {
+                        String st = (String) itr.next ();
+                        //System.out.println ( st );
+
+                        System.out.println ( "В подарке следующие конфеты: " + podarok2 );
+
+                        //for (String sweet : podarok2) ;
+
+                        if (podarok2.contains ( input )) {
+                            System.out.println ( "\nPodarok содержит " + input );
+                        }
+                        else {
+                            System.out.println ( "\nPodarok НЕ содержит наименование " + input );
+
+                        }
+
+
+                        break;
+                    }*/
                     break;
                 }
-
-
-
-
-
 
 
                 case 3: {
@@ -193,11 +274,14 @@ public class Utils {
                     System.out.print ( "Enter weight of sweet 3: " );
                     int weight3    = scan.nextInt ();
                     int vesPodarka = weight1 + weight2 + weight3;
-                    System.out.println ( "Ves podarka is " + vesPodarka );
+                    System.out.println ( "\nVes podarka is " + vesPodarka + " gr" );
 
                     break;
 
                 }
+
+
+                //Здесь лажKа. Похоже на Case12 ( может лучше вообще было бы его убрать, но остался и остался. Поиграл с sort.
 
                 case 4: {
                     System.out.println ( "How much sweets in the podarok?  " );
@@ -216,6 +300,10 @@ public class Utils {
                     System.out.println ();
                     break;
                 }
+
+
+
+
 
 
                 default: {
