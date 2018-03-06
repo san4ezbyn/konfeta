@@ -11,8 +11,6 @@ public class Utils {
         List <Sweets> podarok = new ArrayList <> (); //ссылочная переменная
 
 
-
-
 //VERSIONS QUATRO   4.0.1
 
 
@@ -43,17 +41,15 @@ public class Utils {
                 }
                 case 1: {
 
-
                     boolean viborMenu2 = false;
                     while (true) {
 
-                        System.out.print ( "Make your choice (MENU-2), please.\n" );
+                        System.out.print ( "\nMake your choice (MENU-2), please.\n" );
 
                         System.out.println ( "\n11. Add lollipop." );
                         System.out.println ( "12. Add Choco." );
                         System.out.println ( "13. Add fruit." );
                         System.out.println ( "14. Exit." );
-
 
                         int addSweetVpodarok = scan.nextInt ();
                         switch (addSweetVpodarok) {
@@ -63,7 +59,6 @@ public class Utils {
                                 quantity = scan.nextInt ();
 
                                 for (int i = 1; i <= quantity; i++) {
-
 
                                     Lollipop lollipop = new Lollipop ();
                                     System.out.println ( "Enter lollipop's name: " );
@@ -75,12 +70,9 @@ public class Utils {
                                     lollipop.setWeight ( weight );
 
                                     podarok.add ( lollipop );
-
-
                                 }
                                 System.out.println ( "Podarok contains: " + podarok + "\n" );
                                 break;
-
                             }
 
                             case 12: {
@@ -103,15 +95,12 @@ public class Utils {
 
                                     podarok.add ( choco );
 
-
                                 }
                                 System.out.println ( "Podarok contains: " + podarok + "\n" );
 
                                 break;
-
                             }
                             case 13: {
-
 
                                 System.out.println ( "How much Fruits in the podarok?" );
                                 int quantity = scan.nextInt ();
@@ -120,26 +109,15 @@ public class Utils {
                                 int quantFresh = scan.nextInt ();
                                 System.out.println ( "There are " + quantFresh + " totally fresh fruits" );
 
-
                                 break;
-
-
                             }
-
 // Задума была, чтобы при выборе этого кейса пользователя выбрасывало в МЕНЮ-1. Пока не понимаю, как это сделать.
                             case 14: {
-                                /*//viborMenu2 = false;
-                                choiceMENU1 = false;
-                                System.out.println ( "\nDONE & FINISHED(MENU-2)." );
+                                viborMenu2 = false;
 
+                                System.out.println ( "\nDONE & FINISHED(MENU-2).\n" );
 
-                                break;*/
-
-                                choiceMENU1 = true;
-                                System.out.print ( "\nDONE (MENU-1)" );
                                 break;
-
-
 
                             }
                             default: {
@@ -148,15 +126,9 @@ public class Utils {
                                 System.out.println ( "Wrong type (MENU 2). Enter a valid one!" );
                                 break;
                             }
-
                         }
-
-
                     }
-
-
                 }
-
 
 //MENU-1. Find sweets in podarok.
 
@@ -186,31 +158,23 @@ public class Utils {
                                 System.out.println ( "\nPodarok НЕ содержит наименование RED" );
                             }*/
 
- // second variant
-                         Lollipop lollipop = new Lollipop ();
-                        System.out.println ( "Enter konfetka's name: " );
-                        String name = scan.next ();
-                        lollipop.setName ( name );
+                    // second variant
+                    Lollipop lollipop = new Lollipop ();
+                    System.out.println ( "Enter konfetka's name: " );
+                    String name = scan.next ();
+                    lollipop.setName ( name );
 
-                        podarok.add ( lollipop);
+                    podarok.add ( lollipop );
 
+                    for (Sweets sweet : podarok) ;
 
+                    if (name.equals ( "red" )) {
 
-
-                        for (Sweets sweet: podarok) ;
-
-
-
-                            if (name.equals ("red")) {
-
-                                System.out.println ( "\nPodarok содержит " + name );
-                            }
-                            else {
-                                System.out.println ( "\nPodarok НЕ содержит наименование " + name );
-                            }
-
-
-
+                        System.out.println ( "\nPodarok содержит " + name );
+                    }
+                    else {
+                        System.out.println ( "\nPodarok НЕ содержит наименование " + name );
+                    }
 
 // 3 variant - не работает (где ошибка?)
                    /* ArrayList <String> podarok2 = new ArrayList <> ();
@@ -226,7 +190,6 @@ public class Utils {
                     String kon8 = new String ( "Трюфель" );
                     String kon9 = new String ( "Белорусская картошка" );
 
-
                     podarok2.add ( kon1 );
                     podarok2.add ( kon2 );
                     podarok2.add ( kon3 );
@@ -239,7 +202,6 @@ public class Utils {
 
                     System.out.println ( "Enter konfetka's name: " );
                     String input = scan.next ();
-
 
                     Iterator itr = podarok2.iterator ();
 
@@ -256,30 +218,47 @@ public class Utils {
                         }
                         else {
                             System.out.println ( "\nPodarok НЕ содержит наименование " + input );
-
                         }
-
 
                         break;
                     }*/
                     break;
                 }
 
-
                 case 3: {
-                    System.out.print ( "Enter weight of sweet 1: " );
-                    int weight1 = scan.nextInt ();
-                    System.out.print ( "Enter weight of sweet 2: " );
-                    int weight2 = scan.nextInt ();
-                    System.out.print ( "Enter weight of sweet 3: " );
-                    int weight3    = scan.nextInt ();
-                    int vesPodarka = weight1 + weight2 + weight3;
-                    System.out.println ( "\nVes podarka is " + vesPodarka + " gr" );
 
-                    break;
+                    System.out.println ( "How much konfetok to weight? " );
+                    int konfetokNum = scan.nextInt ();
+                    int arr []= new int [konfetokNum];
+                    System.out.println ( "Input konfetka's weight: " );
+
+                    for (int konfetQuantity = 0; konfetQuantity < konfetokNum; konfetQuantity++) {
+
+
+
+                        arr [konfetQuantity] =  scan.nextInt ();
+                    }
+                    System.out.println ( "Sweets have following weight: " );
+                    for (int konfetQuantity = 0; konfetQuantity < konfetokNum; konfetQuantity++) {
+                        System.out.print ( " v podarke est: " );
+                        System.out.println ( " " + arr[konfetQuantity] );
+
+
+                    }
+
+                    /*int sumVes = 0;
+                    sumVes += arr[];
+                    for (int konfetQuantity = 0; konfetQuantity < konfetokNum; konfetQuantity++) {
+
+                        System.out.println ( "VES podarka is: " );
+                    }*/
+                    //System.out.println();
+
+
+
+                  break;
 
                 }
-
 
                 //Здесь лажKа. Похоже на Case12 ( может лучше вообще было бы его убрать, но остался и остался. Поиграл с sort.
 
@@ -301,11 +280,6 @@ public class Utils {
                     break;
                 }
 
-
-
-
-
-
                 default: {
                     // ERROR IF TYPE A LETTER INSTEAD OF INTEGER!!!!!!!!
 
@@ -313,10 +287,7 @@ public class Utils {
                     break;
                 }
             }
-
         }
-
-
     }
 }
 
