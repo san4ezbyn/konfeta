@@ -88,8 +88,8 @@ public class Utils {
                                     System.out.println ( "Enter choco's name: " );
                                     String name = scan.next ();
                                     choco.setName ( name );
-                                    System.out.println ( "Enter its weight: " );
 
+                                    System.out.println ( "Enter its weight: " );
                                     int weight = scan.nextInt ();
                                     choco.setWeight ( weight );
 
@@ -257,7 +257,7 @@ public class Utils {
                 //Здесь лажKа. Похоже на Case12 ( может лучше вообще было бы его убрать, но остался и остался. Поиграл с sort.
 
                 case 4: {
-                    System.out.println ( "How much sweets in the podarok?  " );
+                    /*System.out.println ( "How much sweets in the podarok?  " );
                     int size    = scan.nextInt (); // Читаем с клавиатуры размер массива и записываем в size
                     int array[] = new int[size]; // Создаём массив int размером в size
                     System.out.println ( "Insert elements of podarok: " );
@@ -270,19 +270,55 @@ public class Utils {
                         Arrays.sort ( array );
                         System.out.print ( " " + array[i] ); // Выводим на экран, полученный массив
                     }
-                    System.out.println ();
-                    break;
+                    System.out.println ();*/
+
+                    /*Choco   choco = new Choco ();
+                    boolean input = false;
+                    while (true) {
+                        System.out.println ( "Fill in the content of podarok, please: " );
+                        String name = scan.next ();
+                        choco.setName ( name );
+
+                        podarok.add ( choco );
+
+                        for (Sweets content : podarok) ;
+
+                        System.out.println ( "The cotent of podarok is: " + podarok +" \n" );*/
+
+                    Choco choco = new Choco ();
+
+                    System.out.println ( "Fill in the content of podarok, please: " );
+                    String name = scan.next ();
+                    choco.setName ( name );
+                    podarok.add ( choco );
+                    for (Sweets content : podarok) ;
+                    System.out.println ( "The cotent of podarok is: " + podarok + " \n" );
+
+
+                    if (name != "q") {
+
+                        break;
+
+                    }
+
+
+                  break;
                 }
 
-                default: {
-                    // ERROR IF TYPE A LETTER INSTEAD OF INTEGER!!!!!!!!
 
-                    System.out.println ( "Wrong type (MENU-1). Enter valid one!" );
-                    break;
-                }
+
+
+
+
+            default: {
+                // ERROR IF TYPE A LETTER INSTEAD OF INTEGER!!!!!!!!
+
+                System.out.println ( "Wrong type (MENU-1). Enter valid one!" );
+                break;
             }
         }
     }
+}
 }
 
 
