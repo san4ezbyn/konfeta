@@ -14,7 +14,7 @@ public class Utils {
         List<Sweets> podarok = new ArrayList<>(); //ссылочная переменная
 
 
-//VERSIONS QUATRO   4.0.3
+//VERSION CINCO   5.0
 
         File file = new File("writeInFile");
         PrintWriter pw = new PrintWriter(file);
