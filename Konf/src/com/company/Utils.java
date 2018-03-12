@@ -166,25 +166,7 @@ File  file2   = new File ("text2.txt");
 
                     case 2: {
 
-                        // 1st variant не работает (где ошибка?)
 
-                  /*          Lollipop lollipop = new Lollipop ();
-                            System.out.println ( "Enter konfetka's name: " );
-                            String name = scan.next ();
-                            lollipop.setName ( name );
-                            podarok.add ( lollipop);
-                            System.out.println ( podarok );
-                            for (Sweets sweet: podarok) ;
-                            System.out.println (podarok);
-    //String searchString = "red";
-                                if (podarok.contains ( lollipop)) {
-                                    System.out.println ( "\nPodarok содержит red" );
-                                }
-                                else {
-                                    System.out.println ( "\nPodarok НЕ содержит наименование RED" );
-                                }*/
-
-                        // second variant
                         Lollipop lollipop = new Lollipop();
                         System.out.println("Enter konfetka's name: ");
                         String name = scan.next();
@@ -201,42 +183,7 @@ File  file2   = new File ("text2.txt");
                             System.out.println("\nPodarok НЕ содержит наименование " + name);
                         }
 
-                        // 3 variant - не работает (где ошибка?)
-                       /* ArrayList <String> podarok2 = new ArrayList <> ();
-                        String kon1 = new String ( "Звездочка" );
-                        String kon2 = new String ( "Мишки" );
-                        String kon3 = new String ( "Коммунарка" );
-                        String kon4 = new String ( "Рачки" );
-                        String kon5 = new String ( "Белочка" );
-                        String kon6 = new String ( "Аленка" );
-                        String kon7 = new String ( "Троицкое предместье" );
-                        String kon8 = new String ( "Трюфель" );
-                        String kon9 = new String ( "Белорусская картошка" );
-                        podarok2.add ( kon1 );
-                        podarok2.add ( kon2 );
-                        podarok2.add ( kon3 );
-                        podarok2.add ( kon4 );
-                        podarok2.add ( kon5 );
-                        podarok2.add ( kon6 );
-                        podarok2.add ( kon7 );
-                        podarok2.add ( kon8 );
-                        podarok2.add ( kon9 );
-                        System.out.println ( "Enter konfetka's name: " );
-                        String input = scan.next ();
-                        Iterator itr = podarok2.iterator ();
-                         while (itr.hasNext ()) {
-                            String st = (String) itr.next ();
-                            //System.out.println ( st );
-                            System.out.println ( "В подарке следующие конфеты: " + podarok2 );
-                            //for (String sweet : podarok2) ;
-                            if (podarok2.contains ( input )) {
-                                System.out.println ( "\nPodarok содержит " + input );
-                            }
-                            else {
-                                System.out.println ( "\nPodarok НЕ содержит наименование " + input );
-                            }
-                            break;
-                        }*/
+
                         break;
                     }
 
@@ -272,30 +219,7 @@ File  file2   = new File ("text2.txt");
                     //Здесь лажKа. Похоже на Case12 ( может лучше вообще было бы его убрать, но остался и остался. Поиграл с sort.
 
                     case 4: {
-                        /*System.out.println ( "How much sweets in the podarok?  " );
-                        int size    = scan.nextInt (); // Читаем с клавиатуры размер массива и записываем в size
-                        int array[] = new int[size]; // Создаём массив int размером в size
-                        System.out.println ( "Insert elements of podarok: " );
-                        //*Пройдёмся по всему массиву, заполняя его*//*
-                        for (int i = 0; i < size; i++) {
-                            array[i] = scan.nextInt (); // Заполняем массив элементами, введёнными с клавиатуры
-                        }
-                        System.out.print ( "The content of podarok is: " );
-                        for (int i = 0; i < size; i++) {
-                            Arrays.sort ( array );
-                            System.out.print ( " " + array[i] ); // Выводим на экран, полученный массив
-                        }
-                        System.out.println ();*/
 
-                        /*Choco   choco = new Choco ();
-                        boolean input = false;
-                        while (true) {
-                            System.out.println ( "Fill in the content of podarok, please: " );
-                            String name = scan.next ();
-                            choco.setName ( name );
-                            podarok.add ( choco );
-                            for (Sweets content : podarok) ;
-                            System.out.println ( "The cotent of podarok is: " + podarok +" \n" );*/
 
                         Choco choco = new Choco();
 
@@ -329,6 +253,9 @@ File  file2   = new File ("text2.txt");
                     (InputMismatchException e) {
                 System.out.println("EXCEPTION message: Enter digits only. No letters, please.");
 
+            }
+            finally {
+                System.out.print ("this is FINALLY block.");
             }
         }
 
