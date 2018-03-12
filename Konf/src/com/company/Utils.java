@@ -1,17 +1,50 @@
 package com.company;
 
+import java.io.*;
 import java.util.*;
 import java.lang.String;
 
 
 public class Utils {
 
-    public static void doSmth ( ) {
+    public static void doSmth() throws IOException {
 
-        List <Sweets> podarok = new ArrayList <> (); //ссылочная переменная
+        List<Sweets> podarok = new ArrayList<>(); //ссылочная переменная
 
 
-//VERSIONS QUATRO   4.0.3
+//VERSION CINCO   5.0
+
+        File file = new File("text1.txt");
+        PrintWriter pw = new PrintWriter(file);
+        pw.print("THIS IS TEXT WRITTEN IN THE FILE: LET'S START IT. PODAROK IS AT LARGE. ATTENCION!!! ACHTUNG!!! UVAGA!!!");
+        pw.print("PrintWriter vs Scanner used");
+        pw.close();
+
+        Scanner scanner = new Scanner(file);
+        while (scanner.hasNextLine()) {
+            System.out.println(scanner.nextLine());
+        }
+
+File  file2   = new File ("text2.txt");
+      FileWriter fileWriter = new FileWriter (file2);
+      fileWriter.write ("This is text-2. FileWriter vs BufferedReader/FileReader are used.");
+      fileWriter.close();
+
+/*FileReader fileReader = new FileReader (file2);
+fileReader.read();
+fileReader.close();*/
+
+        BufferedReader br = new BufferedReader (new FileReader (file2));
+        for (;;){
+            String line = br.readLine();
+            if (line == null)
+                break;
+            System.out.println (line);
+
+        }
+
+        br.close();
+
 
 
 //-------Выбрать действие с конфетами------------
@@ -19,310 +52,287 @@ public class Utils {
 
         boolean choiceMENU1 = false;
         while (true) {
-            System.out.print ( "\nMake your choice (MENU-1), please.\n" );
-            System.out.println ( "\n0. EXIT." );
-            System.out.println ( "1. Add sweets to podarok." );
-            System.out.println ( "2. Find sweets in podarok." );
-            System.out.println ( "3. Show total weight of podarok." );
-            System.out.println ( "4. Show content of podarok." );
+            System.out.print("\nMake your choice (MENU-1), please.\n");
+            System.out.println("\n0. EXIT.");
+            System.out.println("1. Add sweets to podarok.");
+            System.out.println("2. Find sweets in podarok.");
+            System.out.println("3. Show total weight of podarok.");
+            System.out.println("4. Show content of podarok.");
+
+            try {
+                Scanner scan = new Scanner(System.in);
 
 
-            Scanner scan = new Scanner ( System.in );
-
-            int act = scan.nextInt ();
+                int act = scan.nextInt();
 
 
-            switch (act) {
+                switch (act) {
 
-                case 0: {
-                    choiceMENU1 = false;
-                    System.out.print ( "\nDONE (MENU-1)" );
-                    break;
-                }
-                case 1: {
+                    case 0: {
+                        choiceMENU1 = false;
+                        System.out.print("\nDONE (MENU-1)");
+                        break;
+                    }
+                    case 1: {
 
-                    boolean viborMenu2 = false;
-                    while (true) {
+                        boolean viborMenu2 = false;
+                        while (true) {
 
-                        System.out.print ( "\nMake your choice (MENU-2), please.\n" );
+                            System.out.print("\nMake your choice (MENU-2), please.\n");
 
-                        System.out.println ( "\n11. Add lollipop." );
-                        System.out.println ( "12. Add Choco." );
-                        System.out.println ( "13. Add fruit." );
-                        System.out.println ( "14. Exit." );
+                            System.out.println("\n11. Add lollipop.");
+                            System.out.println("12. Add Choco.");
+                            System.out.println("13. Add fruit.");
+                            System.out.println("14. Exit.");
 
-                        int addSweetVpodarok = scan.nextInt ();
-                        switch (addSweetVpodarok) {
-                            case 11: {
-                                int quantity;
-                                System.out.println ( "How much of konfetoks should I add to podarok?" );
-                                quantity = scan.nextInt ();
+                            int addSweetVpodarok = scan.nextInt();
+                            switch (addSweetVpodarok) {
+                                case 11: {
+                                    int quantity;
+                                    System.out.println("How much of konfetoks should I add to podarok?");
+                                    quantity = scan.nextInt();
 
-                                for (int i = 1; i <= quantity; i++) {
+                                    for (int i = 1; i <= quantity; i++) {
 
-                                    Lollipop lollipop = new Lollipop ();
-                                    System.out.println ( "Enter lollipop's name: " );
-                                    String name = scan.next ();
-                                    lollipop.setName ( name );
-                                    System.out.println ( "Enter the weight of lollipop, please: " );
+                                        Lollipop lollipop = new Lollipop();
+                                        System.out.println("Enter lollipop's name: ");
+                                        String name = scan.next();
+                                        lollipop.setName(name);
+                                        System.out.println("Enter the weight of lollipop, please: ");
 
-                                    int weight = scan.nextInt ();
-                                    lollipop.setWeight ( weight );
+                                        int weight = scan.nextInt();
+                                        lollipop.setWeight(weight);
 
-                                    podarok.add ( lollipop );
+                                        podarok.add(lollipop);
+                                    }
+                                    System.out.println("Podarok contains: " + podarok + "\n");
+                                    break;
                                 }
-                                System.out.println ( "Podarok contains: " + podarok + "\n" );
-                                break;
-                            }
 
-                            case 12: {
+                                case 12: {
 
-                                // дубляж of Case11. useless
-                                int quantity;
-                                System.out.println ( "How much of choco should I add to podarok?" );
-                                quantity = scan.nextInt ();
+                                    // дубляж of Case11. useless
+                                    int quantity;
+                                    System.out.println("How much of choco should I add to podarok?");
+                                    quantity = scan.nextInt();
 
-                                for (int i = 1; i <= quantity; i++) {
+                                    for (int i = 1; i <= quantity; i++) {
 
-                                    Choco choco = new Choco ();
-                                    System.out.println ( "Enter choco's name: " );
-                                    String name = scan.next ();
-                                    choco.setName ( name );
+                                        Choco choco = new Choco();
+                                        System.out.println("Enter choco's name: ");
+                                        String name = scan.next();
+                                        choco.setName(name);
 
-                                    System.out.println ( "Enter its weight: " );
-                                    int weight = scan.nextInt ();
-                                    choco.setWeight ( weight );
+                                        System.out.println("Enter its weight: ");
+                                        int weight = scan.nextInt();
+                                        choco.setWeight(weight);
 
-                                    podarok.add ( choco );
+                                        podarok.add(choco);
+
+                                    }
+                                    System.out.println("Podarok contains: " + podarok + "\n");
+
+                                    break;
+                                }
+                                case 13: {
+
+                                    System.out.println("How much Fruits in the podarok?");
+                                    int quantity = scan.nextInt();
+                                    System.out.println("In the podarok there are  " + quantity + " fruits");
+                                    System.out.println("And how many of them are fresh?");
+                                    int quantFresh = scan.nextInt();
+                                    System.out.println("There are " + quantFresh + " totally fresh fruits");
+
+                                    break;
+                                }
+                                // Задума была, чтобы при выборе этого кейса пользователя выбрасывало в МЕНЮ-1. Пока не понимаю, как это сделать.
+                                case 14: {
+                                    viborMenu2 = false;
+
+                                    System.out.println("\nDONE & FINISHED(MENU-2).\n");
+
+                                    break;
 
                                 }
-                                System.out.println ( "Podarok contains: " + podarok + "\n" );
+                                default: {
 
-                                break;
-                            }
-                            case 13: {
 
-                                System.out.println ( "How much Fruits in the podarok?" );
-                                int quantity = scan.nextInt ();
-                                System.out.println ( "In the podarok there are  " + quantity + " fruits" );
-                                System.out.println ( "And how many of them are fresh?" );
-                                int quantFresh = scan.nextInt ();
-                                System.out.println ( "There are " + quantFresh + " totally fresh fruits" );
-
-                                break;
-                            }
-// Задума была, чтобы при выборе этого кейса пользователя выбрасывало в МЕНЮ-1. Пока не понимаю, как это сделать.
-                            case 14: {
-                                viborMenu2 = false;
-
-                                System.out.println ( "\nDONE & FINISHED(MENU-2).\n" );
-
-                                break;
-
-                            }
-                            default: {
-                                // ERROR IF TYPE A LETTER INSTEAD OF INTEGER!!!!!!!!
-
-                                System.out.println ( "Wrong type (MENU 2). Enter a valid one!" );
-                                break;
+                                    System.out.println("Wrong type (MENU 2). Enter a valid one!");
+                                    break;
+                                }
                             }
                         }
                     }
-                }
 
-//MENU-1. Find sweets in podarok.
+                    //MENU-1. Find sweets in podarok.
 
-                case 2: {
+                    case 2: {
 
-                    // 1st variant не работает (где ошибка?)
+                        // 1st variant не работает (где ошибка?)
 
-              /*          Lollipop lollipop = new Lollipop ();
+                  /*          Lollipop lollipop = new Lollipop ();
+                            System.out.println ( "Enter konfetka's name: " );
+                            String name = scan.next ();
+                            lollipop.setName ( name );
+                            podarok.add ( lollipop);
+                            System.out.println ( podarok );
+                            for (Sweets sweet: podarok) ;
+                            System.out.println (podarok);
+    //String searchString = "red";
+                                if (podarok.contains ( lollipop)) {
+                                    System.out.println ( "\nPodarok содержит red" );
+                                }
+                                else {
+                                    System.out.println ( "\nPodarok НЕ содержит наименование RED" );
+                                }*/
+
+                        // second variant
+                        Lollipop lollipop = new Lollipop();
+                        System.out.println("Enter konfetka's name: ");
+                        String name = scan.next();
+                        lollipop.setName(name);
+
+                        podarok.add(lollipop);
+
+                        for (Sweets sweet : podarok) ;
+
+                        if (name.equals("red")) {
+
+                            System.out.println("\nPodarok содержит " + name);
+                        } else {
+                            System.out.println("\nPodarok НЕ содержит наименование " + name);
+                        }
+
+                        // 3 variant - не работает (где ошибка?)
+                       /* ArrayList <String> podarok2 = new ArrayList <> ();
+                        String kon1 = new String ( "Звездочка" );
+                        String kon2 = new String ( "Мишки" );
+                        String kon3 = new String ( "Коммунарка" );
+                        String kon4 = new String ( "Рачки" );
+                        String kon5 = new String ( "Белочка" );
+                        String kon6 = new String ( "Аленка" );
+                        String kon7 = new String ( "Троицкое предместье" );
+                        String kon8 = new String ( "Трюфель" );
+                        String kon9 = new String ( "Белорусская картошка" );
+                        podarok2.add ( kon1 );
+                        podarok2.add ( kon2 );
+                        podarok2.add ( kon3 );
+                        podarok2.add ( kon4 );
+                        podarok2.add ( kon5 );
+                        podarok2.add ( kon6 );
+                        podarok2.add ( kon7 );
+                        podarok2.add ( kon8 );
+                        podarok2.add ( kon9 );
                         System.out.println ( "Enter konfetka's name: " );
-                        String name = scan.next ();
-                        lollipop.setName ( name );
-
-                        podarok.add ( lollipop);
-
-                        System.out.println ( podarok );
-
-
-                        for (Sweets sweet: podarok) ;
-                        System.out.println (podarok);
-
-//String searchString = "red";
-                            if (podarok.contains ( lollipop)) {
-
-                                System.out.println ( "\nPodarok содержит red" );
+                        String input = scan.next ();
+                        Iterator itr = podarok2.iterator ();
+                         while (itr.hasNext ()) {
+                            String st = (String) itr.next ();
+                            //System.out.println ( st );
+                            System.out.println ( "В подарке следующие конфеты: " + podarok2 );
+                            //for (String sweet : podarok2) ;
+                            if (podarok2.contains ( input )) {
+                                System.out.println ( "\nPodarok содержит " + input );
                             }
                             else {
-                                System.out.println ( "\nPodarok НЕ содержит наименование RED" );
-                            }*/
-
-                    // second variant
-                    Lollipop lollipop = new Lollipop ();
-                    System.out.println ( "Enter konfetka's name: " );
-                    String name = scan.next ();
-                    lollipop.setName ( name );
-
-                    podarok.add ( lollipop );
-
-                    for (Sweets sweet : podarok) ;
-
-                    if (name.equals ( "red" )) {
-
-                        System.out.println ( "\nPodarok содержит " + name );
-                    }
-                    else {
-                        System.out.println ( "\nPodarok НЕ содержит наименование " + name );
+                                System.out.println ( "\nPodarok НЕ содержит наименование " + input );
+                            }
+                            break;
+                        }*/
+                        break;
                     }
 
-// 3 variant - не работает (где ошибка?)
-                   /* ArrayList <String> podarok2 = new ArrayList <> ();
+                    case 3: {
+
+                        System.out.println("How much konfetok to weight? ");
+                        int konfetokNum = scan.nextInt();
+                        int arr[] = new int[konfetokNum];
+                        System.out.println("Input konfetka's weight: ");
+
+                        for (int konfetQuantity = 0; konfetQuantity < konfetokNum; konfetQuantity++) {
 
 
-                    String kon1 = new String ( "Звездочка" );
-                    String kon2 = new String ( "Мишки" );
-                    String kon3 = new String ( "Коммунарка" );
-                    String kon4 = new String ( "Рачки" );
-                    String kon5 = new String ( "Белочка" );
-                    String kon6 = new String ( "Аленка" );
-                    String kon7 = new String ( "Троицкое предместье" );
-                    String kon8 = new String ( "Трюфель" );
-                    String kon9 = new String ( "Белорусская картошка" );
-
-                    podarok2.add ( kon1 );
-                    podarok2.add ( kon2 );
-                    podarok2.add ( kon3 );
-                    podarok2.add ( kon4 );
-                    podarok2.add ( kon5 );
-                    podarok2.add ( kon6 );
-                    podarok2.add ( kon7 );
-                    podarok2.add ( kon8 );
-                    podarok2.add ( kon9 );
-
-                    System.out.println ( "Enter konfetka's name: " );
-                    String input = scan.next ();
-
-                    Iterator itr = podarok2.iterator ();
-
-                     while (itr.hasNext ()) {
-                        String st = (String) itr.next ();
-                        //System.out.println ( st );
-
-                        System.out.println ( "В подарке следующие конфеты: " + podarok2 );
-
-                        //for (String sweet : podarok2) ;
-
-                        if (podarok2.contains ( input )) {
-                            System.out.println ( "\nPodarok содержит " + input );
+                            arr[konfetQuantity] = scan.nextInt();
                         }
-                        else {
-                            System.out.println ( "\nPodarok НЕ содержит наименование " + input );
+                        System.out.println("Sweets of podarok have following weights: ");
+                        for (int konfetQuantity = 0; konfetQuantity < konfetokNum; konfetQuantity++) {
+                            System.out.println("v podarke est: " + arr[konfetQuantity] + "gr");
+
+
                         }
+                        int sumVes = 0;
+                        for (int ves : arr) {
+                            sumVes = sumVes + ves;
+                        }
+                        System.out.println("Podarok has following weight: " + sumVes);
+
 
                         break;
-                    }*/
-                    break;
-                }
-
-                case 3: {
-
-                    System.out.println ( "How much konfetok to weight? " );
-                    int konfetokNum = scan.nextInt ();
-                    int arr[]       = new int[konfetokNum];
-                    System.out.println ( "Input konfetka's weight: " );
-
-                    for (int konfetQuantity = 0; konfetQuantity < konfetokNum; konfetQuantity++) {
-
-
-                        arr[konfetQuantity] = scan.nextInt ();
-                    }
-                    System.out.println ( "Sweets of podarok have following weights: " );
-                    for (int konfetQuantity = 0; konfetQuantity < konfetokNum; konfetQuantity++) {
-                        System.out.println ( "v podarke est: " + arr[konfetQuantity] + "gr" );
-
 
                     }
-                    int sumVes = 0;
-                    for (int ves : arr) {
-                        sumVes = sumVes + ves;
-                    }
-                    System.out.println ( "Podarok has following weight: " + sumVes );
 
+                    //Здесь лажKа. Похоже на Case12 ( может лучше вообще было бы его убрать, но остался и остался. Поиграл с sort.
 
-                    break;
+                    case 4: {
+                        /*System.out.println ( "How much sweets in the podarok?  " );
+                        int size    = scan.nextInt (); // Читаем с клавиатуры размер массива и записываем в size
+                        int array[] = new int[size]; // Создаём массив int размером в size
+                        System.out.println ( "Insert elements of podarok: " );
+                        //*Пройдёмся по всему массиву, заполняя его*//*
+                        for (int i = 0; i < size; i++) {
+                            array[i] = scan.nextInt (); // Заполняем массив элементами, введёнными с клавиатуры
+                        }
+                        System.out.print ( "The content of podarok is: " );
+                        for (int i = 0; i < size; i++) {
+                            Arrays.sort ( array );
+                            System.out.print ( " " + array[i] ); // Выводим на экран, полученный массив
+                        }
+                        System.out.println ();*/
 
-                }
+                        /*Choco   choco = new Choco ();
+                        boolean input = false;
+                        while (true) {
+                            System.out.println ( "Fill in the content of podarok, please: " );
+                            String name = scan.next ();
+                            choco.setName ( name );
+                            podarok.add ( choco );
+                            for (Sweets content : podarok) ;
+                            System.out.println ( "The cotent of podarok is: " + podarok +" \n" );*/
 
-                //Здесь лажKа. Похоже на Case12 ( может лучше вообще было бы его убрать, но остался и остался. Поиграл с sort.
+                        Choco choco = new Choco();
 
-                case 4: {
-                    /*System.out.println ( "How much sweets in the podarok?  " );
-                    int size    = scan.nextInt (); // Читаем с клавиатуры размер массива и записываем в size
-                    int array[] = new int[size]; // Создаём массив int размером в size
-                    System.out.println ( "Insert elements of podarok: " );
-                    //*Пройдёмся по всему массиву, заполняя его*//*
-                    for (int i = 0; i < size; i++) {
-                        array[i] = scan.nextInt (); // Заполняем массив элементами, введёнными с клавиатуры
-                    }
-                    System.out.print ( "The content of podarok is: " );
-                    for (int i = 0; i < size; i++) {
-                        Arrays.sort ( array );
-                        System.out.print ( " " + array[i] ); // Выводим на экран, полученный массив
-                    }
-                    System.out.println ();*/
-
-                    /*Choco   choco = new Choco ();
-                    boolean input = false;
-                    while (true) {
-                        System.out.println ( "Fill in the content of podarok, please: " );
-                        String name = scan.next ();
-                        choco.setName ( name );
-
-                        podarok.add ( choco );
-
+                        System.out.println("Fill in the content of podarok, please: ");
+                        String name = scan.next();
+                        choco.setName(name);
+                        podarok.add(choco);
                         for (Sweets content : podarok) ;
-
-                        System.out.println ( "The cotent of podarok is: " + podarok +" \n" );*/
-
-                    Choco choco = new Choco ();
-
-                    System.out.println ( "Fill in the content of podarok, please: " );
-                    String name = scan.next ();
-                    choco.setName ( name );
-                    podarok.add ( choco );
-                    for (Sweets content : podarok) ;
-                    System.out.println ( "The cotent of podarok is: " + podarok + " \n" );
+                        System.out.println("The cotent of podarok is: " + podarok + " \n");
 
 
-                    if (name != "q") {
+                        if (name != "q") {
+
+                            break;
+
+                        }
+
 
                         break;
-
                     }
 
 
-                  break;
+                    default: {
+                        // ERROR IF TYPE A LETTER INSTEAD OF INTEGER!!!!!!!!
+
+                        System.out.println("Wrong type (MENU-1). Enter valid one!");
+                        break;
+                    }
                 }
+            } catch
+                    (InputMismatchException e) {
+                System.out.println("EXCEPTION message: Enter digits only. No letters, please.");
 
-
-
-
-
-
-            default: {
-                // ERROR IF TYPE A LETTER INSTEAD OF INTEGER!!!!!!!!
-
-                System.out.println ( "Wrong type (MENU-1). Enter valid one!" );
-                break;
             }
         }
+
     }
 }
-}
-
-
-
-
-
-
