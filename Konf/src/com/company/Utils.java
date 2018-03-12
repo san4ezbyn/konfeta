@@ -12,7 +12,7 @@ public class Utils {
         List<Sweets> podarok = new ArrayList<>(); //ссылочная переменная
 
 
-//VERSION CINCO   5.0
+//VERSION CINCO   5.0.1
 
         File file = new File("text1.txt");
         PrintWriter pw = new PrintWriter(file);
@@ -30,9 +30,7 @@ File  file2   = new File ("text2.txt");
       fileWriter.write ("This is text-2. FileWriter vs BufferedReader/FileReader are used.");
       fileWriter.close();
 
-/*FileReader fileReader = new FileReader (file2);
-fileReader.read();
-fileReader.close();*/
+
 
         BufferedReader br = new BufferedReader (new FileReader (file2));
         for (;;){
