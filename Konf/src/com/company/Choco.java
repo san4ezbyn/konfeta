@@ -24,11 +24,8 @@ public class Choco extends Sweets {
 
     @Override
     public String toString ( ) {
-        return "Choco{" +
-                " name = '" + super.getName () +"\'" +
-                " weight =" + super.getWeight () +
-                " pack ='" + pack + '\'' +
-                '}';
+        return super.getName () + " " +
+                super.getWeight () + " gr\n";
     }
 
 }

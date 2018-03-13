@@ -38,9 +38,11 @@ public class Lollipop extends Sweets {
                 " obertka ='" + obertka + '\'' +
                 '}';*/
 
-    public String getInfo ( ) {
-        return super.getInfo () + this.obertka;
+    public String toString ( ) {
+        return super.getName () + " " +
+                super.getWeight () + " gr\n";
     }
 }
+
 
 

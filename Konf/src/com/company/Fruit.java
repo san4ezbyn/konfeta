@@ -24,14 +24,20 @@ public class Fruit extends Sweets {
 
     @Override
     public String toString ( ) {
-        return "Fruit{" +
+      /*  return "Fruit{" +
                 " name = '" + super.getName () + "\'" +
                 " weight =" + super.getWeight () +
                 " fresh ='" + fresh + '\'' +
-                '}';
+                '}';*/
+
+        return super.getName () + " " +
+                super.getWeight () + " gr";
     }
 
+
 }
+
+
 
 
 

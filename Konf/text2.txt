@@ -1,1 +1,0 @@
-This is text-2. FileWriter vs BufferedReader/FileReader are used.

@@ -8,18 +8,15 @@ public abstract class Sweets {
     public Sweets ( ) {
     }
 
-    void vid ( String str){
-        System.out.println (str);
+    void vid ( String str ) {
+        System.out.println ( str );
 
     }
 
-    Sweets (String name, double weight){
+    Sweets ( String name , double weight ) {
         this.name = name;
         this.weight = weight;
     }
-
-
-
 
 
     public String getName ( ) {
@@ -39,18 +36,16 @@ public abstract class Sweets {
     }
 
 
-    public String getInfo() {
+    public String getInfo ( ) {
         return "Name" + this.name + " weight:" + this.weight;
     }
 
     @Override
     public String toString ( ) {
-        return "Sweets{" +
-                "name='" + name + '\'' +
-                ", weight=" + weight +
-                '}';
-
-
-
+        return "\n"+name + " " +
+                weight + " gr\n";
     }
+
+
 }
+
