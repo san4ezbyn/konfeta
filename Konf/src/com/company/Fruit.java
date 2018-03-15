@@ -30,8 +30,8 @@ public class Fruit extends Sweets {
                 " fresh ='" + fresh + '\'' +
                 '}';*/
 
-        return super.getName () + " " +
-                super.getWeight () + " gr";
+        return ("NAME  " +super.getName () + " " +
+                "WEIGHT " + super.getWeight () + " gr\n");
     }
 
 

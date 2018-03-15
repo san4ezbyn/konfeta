@@ -42,8 +42,7 @@ public abstract class Sweets {
 
     @Override
     public String toString ( ) {
-        return "\n"+name + " " +
-                weight + " gr\n";
+        return "\n" + name + " " + weight + " gr\n";
     }
 
 

@@ -5,21 +5,26 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
+import java.io.FileNotFoundException;
 
 
 public class Utils {
 
+
+
     public static List <Sweets> podarok = new ArrayList <> ();
     private static Scanner scan;
 
-    public static void runProg ( ) throws IOException {
+    public static void runProg ( ) throws IOException, FileNotFoundException {
 
 
-//VERSION SEIS   6.0
+//VERSION SEIS   6.1
 
         boolean choiceMENU1 = true;
         while (choiceMENU1) {
+            System.out.print ( "====================================" );
             System.out.print ( "\nMake your choice in MENU-1, please.\n" );
+            System.out.print ( "====================================" );
             System.out.println ( "\n0. EXIT." );
             System.out.println ( "1. Add sweets to podarok." );
             System.out.println ( "2. Find sweets in podarok." );
@@ -105,8 +110,9 @@ public class Utils {
 
 
                     default: {
-
+                        System.out.println ( "***************************************" );
                         System.out.println ( "Wrong type in MENU-1. Enter a valid one!" );
+                        System.out.println ( "***************************************" );
                         break;
                     }
                 }
@@ -119,7 +125,7 @@ public class Utils {
 
     }
 
-    public static Sweets initSweet ( Sweets sweet ) {
+    public static Sweets initSweet ( Sweets sweet ) throws FileNotFoundException {
         System.out.println ( "Enter a sweet's name: " );
         String name = scan.next ();
         sweet.setName ( name );
@@ -129,7 +135,15 @@ public class Utils {
         sweet.setWeight ( weight );
 
         return sweet;
+
     }
+
+   /* public static DataBase db = new DataBase () {
+
+        db.runDataBase();
+    }
+*/
+
 }
 
 

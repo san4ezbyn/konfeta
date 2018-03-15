@@ -1,5 +1,4 @@
 
-[qqwer 12.0 gr
-, sos 12.0 gr
-, z 9.0 gr
+[NAME  qweqwe WEIGHT 12.0 gr
+, NAME  qweqr WEIGHT 12.0 gr
 ]

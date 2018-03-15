@@ -1,15 +1,21 @@
 package com.company;
 
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Content extends Utils {
-    public static void caseMENU2 ( ) {
+
+    protected static void caseMENU2 ( ) throws FileNotFoundException {
+
         Scanner scan       = new Scanner ( System.in );
+
         boolean viborMenu2 = true;
         while (viborMenu2) {
 
+            System.out.print ( "====================================" );
             System.out.print ( "\nMake your choice in MENU-2, please.\n" );
+            System.out.print ( "====================================" );
 
             System.out.println ( "\n11. Add lollipop." );
             System.out.println ( "12. Add Choco." );
@@ -45,14 +51,16 @@ public class Content extends Utils {
                 }
                 case 13: {
 
-                    System.out.println ( "How much Fruits in the podarok?" );
-                    int quantity = scan.nextInt ();
-                    System.out.println ( "In the podarok there are  " + quantity + " fruits" );
-                    System.out.println ( "And how many of them are fresh?" );
-                    int quantFresh = scan.nextInt ();
-                    System.out.println ( "There are " + quantFresh + " totally fresh fruits" );
 
+                    int quantity;
+                    System.out.print ( "Input quantity of fruits: " );
+                    quantity = scan.nextInt ();
+                    for (int i = 1; i <= quantity; i++) {
+                        podarok.add ( initSweet ( new Lollipop () ) );
+                    }
+                    System.out.println ( "В ПОДАРКЕ: " + podarok + "\n" );
                     break;
+
                 }
                 case 14: {
                     viborMenu2 = false;
@@ -64,8 +72,9 @@ public class Content extends Utils {
                 }
                 default: {
 
-
+                    System.out.println ( "***************************************" );
                     System.out.println ( "Wrong type in MENU 2. Enter a valid one!" );
+                    System.out.println ( "***************************************" );
                     break;
                 }
             }
