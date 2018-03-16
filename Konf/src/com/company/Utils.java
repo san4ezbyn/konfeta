@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.xml.crypto.Data;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -11,14 +12,14 @@ import java.io.FileNotFoundException;
 public class Utils {
 
 
-
     public static List <Sweets> podarok = new ArrayList <> ();
     private static Scanner scan;
 
     public static void runProg ( ) throws IOException, FileNotFoundException {
 
 
-//VERSION SEIS   6.1
+//VERSION SIETE   7
+
 
         boolean choiceMENU1 = true;
         while (choiceMENU1) {
@@ -30,6 +31,7 @@ public class Utils {
             System.out.println ( "2. Find sweets in podarok." );
             System.out.println ( "3. Show total weight of podarok." );
             System.out.println ( "4. Show content of podarok." );
+            System.out.println ( "5. Write in a file and fill in an array." );
 
             try {
                 scan = new Scanner ( System.in );
@@ -57,11 +59,6 @@ public class Utils {
                             if (name.equals ( sweet.getName () )) {
                                 System.out.println ( sweet );
                             }
-
-                            // печатать, если нет конфеты
-                            /*else {
-                                System.out.println ( "\nВ ПОДАРКЕ нет" + name );
-                            }*/
                         }
 
 
@@ -84,26 +81,33 @@ public class Utils {
 
                     case 4: {
                         try {
-                            File       myFile       = new File ( "podarok.txt" );
-                            FileWriter writerINfile = new FileWriter ( myFile );
-                            writerINfile.write ( String.valueOf ( "\n" + podarok ) );
-                            writerINfile.close ();
+                            File       myFile2       = new File ( "podarok.txt" );
+                            FileWriter writerINfile2 = new FileWriter ( myFile2 );
+                            writerINfile2.write ( String.valueOf ( "\n" + podarok ) );
+                            writerINfile2.close ();
 
-                            BufferedReader bufReader = new BufferedReader ( new FileReader ( myFile ) );
+                            BufferedReader bufReader2 = new BufferedReader ( new FileReader ( myFile2 ) );
 
                             for (; ; ) {
-                                String line = bufReader.readLine ();
+                                String line = bufReader2.readLine ();
                                 if (line == null)
                                     break;
                                 System.out.println ( line );
 
                             }
 
-                            bufReader.close ();
-                        } catch (FileNotFoundException ex) {
+                            bufReader2.close ();
+                        } catch (FileNotFoundException exc) {
                             System.out.print ( "File not found. Create a file, please." );
                         }
 
+
+                        break;
+                    }
+                    case 5: {
+
+                        Case5 case5 = new Case5 ();
+                        case5.runCase5 ();
 
                         break;
                     }
@@ -123,6 +127,12 @@ public class Utils {
             }
         }
 
+// запуск программы по выходу из МЕНЮ-1
+        ConnectJDBC conJDBC = new ConnectJDBC ();
+        conJDBC.runConnectJDBC();
+
+
+
     }
 
     public static Sweets initSweet ( Sweets sweet ) throws FileNotFoundException {
@@ -138,11 +148,7 @@ public class Utils {
 
     }
 
-   /* public static DataBase db = new DataBase () {
 
-        db.runDataBase();
-    }
-*/
 
 }
 

@@ -1,3 +1,4 @@
+/*
 package com.company;
 
 import java.io.FileInputStream;
@@ -130,11 +131,6 @@ public class DataBase extends Utils {
 
 
 
-
-
-
-
-
         ResultSet rs = null;
         Statement s  = null;
         try
@@ -164,10 +160,8 @@ public class DataBase extends Utils {
                     s.close ();
             } catch (SQLException e) {
             }
-
-
-
         }
 
     }
 }
+*/

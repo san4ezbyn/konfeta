@@ -1,9 +1,16 @@
-/*
 package com.company;
 
-public class xmlFile {
 
-private int elements;
+import jdk.internal.org.xml.sax.SAXException;
+
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+
+public class SAXParser {
+
+   /* private final Object SAXParseException;*/
+    private int elements;
 private int attributes;
 private int characters;
 private int ignorableWhitespace;
@@ -12,7 +19,7 @@ private String url;
 public SAXParser(String url_str){
 url=url_str;
 try {
-out=new PrintWriter(new OutputStreamWriter(
+out=new PrintWriter (new OutputStreamWriter (
 System.out, "koi8-r"));
 }
 catch (UnsupportedEncodingException e){
@@ -102,4 +109,3 @@ System.out.println ("Символов :" + characters);
 
 
 }
-*/
