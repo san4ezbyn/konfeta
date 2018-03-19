@@ -1,3 +1,4 @@
+/*
 package com.company;
 
 import org.xml.sax.Parser;
@@ -17,8 +18,8 @@ public class SaxExample {
             parser.setDocumentHandler ( sample );
             parser.setErrorHandler ( sample );
 
-            parser.parser ( FILE_PATH );
-            sample.setErrorHandler ( sample );
+            parser.parse ( FILE_PATH );
+            sample.printInfo();
 
         } catch (Exception e) {
             e.printStackTrace ( System.err );
@@ -26,3 +27,4 @@ public class SaxExample {
 
     }
 }
+*/

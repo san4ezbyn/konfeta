@@ -18,7 +18,7 @@ public class Utils {
     public static void runProg ( ) throws IOException, FileNotFoundException {
 
 
-//VERSION SIETE   7
+//VERSION OCHO   8.0
 
 
         boolean choiceMENU1 = true;
@@ -26,12 +26,14 @@ public class Utils {
             System.out.print ( "====================================" );
             System.out.print ( "\nMake your choice in MENU-1, please.\n" );
             System.out.print ( "====================================" );
-            System.out.println ( "\n0. EXIT." );
+            System.out.println ( "\n0. EXIT");
             System.out.println ( "1. Add sweets to podarok." );
             System.out.println ( "2. Find sweets in podarok." );
             System.out.println ( "3. Show total weight of podarok." );
             System.out.println ( "4. Show content of podarok." );
             System.out.println ( "5. Write in a file and fill in an array." );
+            System.out.println ( "6. Connect to DB and print its content out.");
+            System.out.println ( "7. Parse XML file.");
 
             try {
                 scan = new Scanner ( System.in );
@@ -40,7 +42,7 @@ public class Utils {
                 switch (act) {
                     case 0: {
                         choiceMENU1 = false;
-                        System.out.print ( "\nYou have left MENU-1." );
+                        System.out.print ( "\nYou have left MENU-1.\n" );
                         break;
                     }
                     case 1: {
@@ -112,6 +114,18 @@ public class Utils {
                         break;
                     }
 
+                    case 6: {
+
+                        ConnectJDBC conJDBC = new ConnectJDBC ();
+                        conJDBC.runConnectJDBC();
+                        break;
+                    }
+                    case 7: {
+
+                        XMLParserSAX runSAX = new XMLParserSAX ();
+                        runSAX.runPARSER();
+                        break;
+                    }
 
                     default: {
                         System.out.println ( "***************************************" );
@@ -126,11 +140,6 @@ public class Utils {
 
             }
         }
-
-// запуск программы по выходу из МЕНЮ-1
-        ConnectJDBC conJDBC = new ConnectJDBC ();
-        conJDBC.runConnectJDBC();
-
 
 
     }

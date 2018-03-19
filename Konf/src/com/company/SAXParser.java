@@ -1,3 +1,4 @@
+/*
 package com.company;
 
 
@@ -9,7 +10,9 @@ import java.io.UnsupportedEncodingException;
 
 public class SAXParser {
 
-   /* private final Object SAXParseException;*/
+   */
+/* private final Object SAXParseException;*//*
+
     private int elements;
 private int attributes;
 private int characters;
@@ -109,3 +112,4 @@ System.out.println ("Символов :" + characters);
 
 
 }
+*/

@@ -1,5 +1,0 @@
-Dbase.txt
-driver = org.firebirdsql.jdbc.FBDriver
-dbURL = jdbc:mysql://localhost/my_base
-user = root
-password = root

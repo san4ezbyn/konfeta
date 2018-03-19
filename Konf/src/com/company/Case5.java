@@ -21,7 +21,7 @@ public class Case5 extends Utils {
 
         writerINfile.close ();
 
-
+//записать содержимое файла в массив
             List<String> podarok = Files.readAllLines( Paths.get("content"), Charset.defaultCharset());
             System.out.println (podarok);
 
