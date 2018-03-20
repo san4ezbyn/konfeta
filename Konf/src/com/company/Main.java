@@ -9,10 +9,9 @@ public class Main {
 
 
 
-    public static void main ( String[] args ) throws FileNotFoundException, IOException {
+    public static void main ( String[] args ) throws IOException {
 
-        Utils utils = new Utils ();
-        utils. runProg ( );
+        Utils.runProg ( );
 
 
 

@@ -9,13 +9,13 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 
 
-public class Utils {
+public class Utils  {
 
 
     public static List <Sweets> podarok = new ArrayList <> ();
     private static Scanner scan;
 
-    public static void runProg ( ) throws IOException, FileNotFoundException {
+    public static void runProg ( ) throws IOException{
 
 
 //VERSION OCHO   8.0
@@ -31,9 +31,9 @@ public class Utils {
             System.out.println ( "2. Find sweets in podarok." );
             System.out.println ( "3. Show total weight of podarok." );
             System.out.println ( "4. Show content of podarok." );
-            System.out.println ( "5. Write in a file and fill in an array." );
+            System.out.println ( "5. Fill array from a file." );
             System.out.println ( "6. Connect to DB and print its content out.");
-            System.out.println ( "7. Parse XML file.");
+            System.out.println ( "7. Parse XML file and write content into array.");
 
             try {
                 scan = new Scanner ( System.in );
@@ -46,8 +46,7 @@ public class Utils {
                         break;
                     }
                     case 1: {
-                        Content cont = new Content ();
-                        cont.caseMENU2 ();
+                        Content.caseMENU2 ();
 
                         break;
                     }
@@ -60,6 +59,8 @@ public class Utils {
                         for (Sweets sweet : podarok) {
                             if (name.equals ( sweet.getName () )) {
                                 System.out.println ( sweet );
+                            } else {
+                                System.out.print ("No such sweet in podarok.\n");
                             }
                         }
 
@@ -116,8 +117,12 @@ public class Utils {
 
                     case 6: {
 
-                        ConnectJDBC conJDBC = new ConnectJDBC ();
-                        conJDBC.runConnectJDBC();
+                        /*ConnectJDBC con = new ConnectJDBC();
+                        con.runConnectJDBC();*/
+                        BDbody bdb = new BDbody();
+                        bdb.runBDbody();
+
+
                         break;
                     }
                     case 7: {

@@ -21,15 +21,16 @@ public class XMLParserSAX extends Utils{
         try {
             SAXParser saxParser = saxParserFactory.newSAXParser();
             MyHandler handler = new MyHandler();
-            saxParser.parse(new File("employees.xml"), handler);
-            //Get Employees list
-            List<Employee> empList = handler.getEmpList();
-            //print employee information
-            for(Employee emp : empList)
-                System.out.println(emp);
+            saxParser.parse(new File( "konfetki.xml" ), handler);
+            //Get sweets list
+            List<Sweets> podarok = handler.getEmpList();
+            //print sweets information
+
+                System.out.println(podarok);
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
+
     }
 
 }

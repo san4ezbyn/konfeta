@@ -1,0 +1,10 @@
+SWEETS:  Lollipop Lol1 8
+Lollipop Lol2 9
+Lollipop Lol3 11
+Lollipop Lol4 12
+Choco Chocolade1 9
+Choco Chocolade2 12
+Choco Chocolade3 13
+Fruit Apple 100
+Fruit Plum 25
+Fruit Peach 90

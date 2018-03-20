@@ -8,10 +8,10 @@ public abstract class Sweets {
     public Sweets ( ) {
     }
 
-    void vid ( String str ) {
+   /* void vid ( String str ) {
         System.out.println ( str );
 
-    }
+    }*/
 
     Sweets ( String name , double weight ) {
         this.name = name;
@@ -44,6 +44,7 @@ public abstract class Sweets {
     public String toString ( ) {
         return "\n" + name + " " + weight + " gr\n";
     }
+
 
 
 }

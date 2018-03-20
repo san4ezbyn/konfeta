@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<podarok>
+    <sweets id="001">
+        <name>Lizyn</name>
+        <weight>8</weight>
+        <type>сосулька</type>
+    </sweets>
+    <sweets id="002">
+        <name>Chyba</name>
+        <weight>9</weight>
+        <type>сосулька</type>
+    </sweets>
+    <sweets id="003">
+        <name>Aeroflot</name>
+        <weight>10</weight>
+        <type>сосулька</type>
+    </sweets>
+    <sweets id="004">
+        <name>Vkysnjashka</name>
+        <weight>15</weight>
+        <type>шоколадная</type>
+    </sweets>
+    <sweets id="005">
+        <name>Kommynarka</name>
+        <weight>14</weight>
+        <type>шоколадная</type>
+    </sweets>
+    <sweets id="006">
+        <name>Zvezdochka</name>
+        <weight>11</weight>
+        <type>шоколадная</type>
+    </sweets>
+</podarok>
